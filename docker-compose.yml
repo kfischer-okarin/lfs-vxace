@@ -1,4 +1,7 @@
 services:
   ruby:
     build: .
+    volumes:
+      - ./src:/usr/src/app/src
+      - ./tests:/usr/src/app/tests
 
