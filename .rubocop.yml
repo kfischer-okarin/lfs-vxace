@@ -1,0 +1,5 @@
+Style/Encoding:
+  EnforcedStyle: when_needed
+
+Style/LineLength:
+  Max: 120

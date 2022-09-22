@@ -2,6 +2,7 @@ services:
   ruby:
     build: .
     volumes:
+      - ./.rubocop.yml:/usr/src/app/.rubocop.yml
       - ./src:/usr/src/app/src
       - ./tests:/usr/src/app/tests
 
