@@ -68,4 +68,24 @@ end
 # Base class for all tests.
 class LanguageFileSystemTest < Minitest::Test
   include FileSystemStub
+
+  def before_setup
+    super
+    @default_languages = LanguageFileSystem::LANGUAGES
+    @default_default_language = LanguageFileSystem::DEFAULT_LANGUAGE
+    @default_enable_encryption = LanguageFileSystem::ENABLE_ENCRYPTION
+    LanguageFileSystem.instance_variable_set(:@dialogues, {})
+    LanguageFileSystem.instance_variable_set(:@database, {})
+  end
+
+  def after_teardown
+    super
+    LanguageFileSystem.send(:remove_const, :LANGUAGES)
+    LanguageFileSystem.const_set(:LANGUAGES, @default_languages)
+    LanguageFileSystem.send(:remove_const, :DEFAULT_LANGUAGE)
+    LanguageFileSystem.const_set(:DEFAULT_LANGUAGE, @default_default_language)
+    LanguageFileSystem.instance_variable_set(:@language, @default_default_language)
+    LanguageFileSystem.send(:remove_const, :ENABLE_ENCRYPTION)
+    LanguageFileSystem.const_set(:ENABLE_ENCRYPTION, @default_enable_encryption)
+  end
 end
