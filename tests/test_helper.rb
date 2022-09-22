@@ -18,11 +18,13 @@ module Stubs
     end
   end
 
-  def stub(obj, method, &block)
-    obj.send :alias_method, :"__original_#{method}", method
-    obj.send :define_method, method, &block
-    @stubs[obj] ||= []
-    @stubs[obj] << method
+  def stub(obj, method, options = nil, &block)
+    target = obj
+    target = obj.singleton_class if options && options[:class_method]
+    target.send :alias_method, :"__original_#{method}", method
+    target.send :define_method, method, &block
+    @stubs[target] ||= []
+    @stubs[target] << method
   end
 end
 
@@ -59,7 +61,7 @@ module FileSystemStub
   def stub_filetest
     files = @files
 
-    stub FileTest, :exist? do |path|
+    stub FileTest, :exist?, class_method: true do |path|
       files.key? path
     end
   end
