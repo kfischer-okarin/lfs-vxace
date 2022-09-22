@@ -1,22 +1,24 @@
+# rubocop:disable Style/Documentation
 module DataManager
   def self.load_database; end
 end
 
 class Game_Message
-  def add(text); end
+  def add(_text); end
+
   def clear; end
 end
 
 class Game_Interpreter
-  def setup_choices(params); end
+  def setup_choices(_params); end
 end
 
 module Cache
-  def self.load_bitmap(folder_name, filename, hue = 0); end
+  def self.load_bitmap(_folder_name, _filename, _hue = 0); end
 end
 
 class Game_Actor
-  def setup(actor_id); end
+  def setup(_actor_id); end
 end
 
 module RPG
@@ -57,3 +59,4 @@ module RPG
     attr_reader :display_name, :note
   end
 end
+# rubocop:enable Style/Documentation

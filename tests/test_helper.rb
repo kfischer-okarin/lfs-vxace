@@ -65,6 +65,7 @@ module FileSystemStub
   end
 end
 
+# Base class for all tests.
 class LanguageFileSystemTest < Minitest::Test
   include FileSystemStub
 end
