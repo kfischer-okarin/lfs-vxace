@@ -90,4 +90,27 @@ class LanguageFileSystemTest < Minitest::Test
     LanguageFileSystem.send(:remove_const, :ENABLE_ENCRYPTION)
     LanguageFileSystem.const_set(:ENABLE_ENCRYPTION, @default_enable_encryption)
   end
+
+  def init_lfs(values)
+    LanguageFileSystem.send(:remove_const, :LANGUAGES)
+    LanguageFileSystem.const_set(:LANGUAGES, values.fetch(:languages, @default_languages))
+    LanguageFileSystem.send(:remove_const, :DEFAULT_LANGUAGE)
+    default_language = values.fetch(:default_language, @default_default_language)
+    LanguageFileSystem.const_set(:DEFAULT_LANGUAGE, default_language)
+    LanguageFileSystem.instance_variable_set(:@language, default_language)
+    LanguageFileSystem.send(:remove_const, :ENABLE_ENCRYPTION)
+    LanguageFileSystem.const_set(:ENABLE_ENCRYPTION, values.fetch(:enable_encryption, @default_enable_encryption))
+
+    DataManager.load_database
+  end
+
+  def show_text(text)
+    @game_message ||= Game_Message.new
+    @game_message.clear
+    @game_message.add text
+  end
+
+  def displayed_text
+    @game_message.texts.join("\n")
+  end
 end

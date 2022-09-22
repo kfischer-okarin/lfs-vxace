@@ -4,9 +4,18 @@ module DataManager
 end
 
 class Game_Message
-  def add(_text); end
+  attr_reader :texts
+  def initialize
+    clear
+  end
 
-  def clear; end
+  def add(text)
+    @texts << text
+  end
+
+  def clear
+    @texts = []
+  end
 end
 
 class Game_Interpreter
