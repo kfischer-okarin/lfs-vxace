@@ -71,6 +71,8 @@ end
 class LanguageFileSystemTest < Minitest::Test
   include FileSystemStub
 
+  attr_reader :game_message
+
   def before_setup
     super
     @default_languages = LanguageFileSystem::LANGUAGES
@@ -108,9 +110,5 @@ class LanguageFileSystemTest < Minitest::Test
     @game_message ||= Game_Message.new
     @game_message.clear
     @game_message.add text
-  end
-
-  def displayed_text
-    @game_message.texts.join("\n")
   end
 end

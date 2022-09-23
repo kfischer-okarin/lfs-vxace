@@ -16,7 +16,6 @@ class TestLanguageFileSystem < LanguageFileSystemTest
     add_file 'DialoguesEnglish.rvtext',
              "# LFS DIALOGUES VERSION 13\n" \
              "<<soldier_greeting>>\n" \
-             "<<face: People4, 6>>\n" \
              "\\C[6]Soldier:\\C[0]\n" \
              "Greetings! Don't make any trouble!\n"
 
@@ -27,7 +26,7 @@ class TestLanguageFileSystem < LanguageFileSystemTest
     show_text '\\dialogue[soldier_greeting]'
 
     expected_displayed_text = "\\C[6]Soldier:\\C[0]\n" \
-                              "Greetings! Don't make any trouble!"
-    assert_equal expected_displayed_text, displayed_text
+                              "Greetings! Don't make any trouble!\n"
+    assert_equal expected_displayed_text, game_message.all_text
   end
 end

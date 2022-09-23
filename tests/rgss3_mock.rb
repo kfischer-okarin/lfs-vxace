@@ -5,6 +5,7 @@ end
 
 class Game_Message
   attr_reader :texts
+
   def initialize
     clear
   end
@@ -15,6 +16,10 @@ class Game_Message
 
   def clear
     @texts = []
+  end
+
+  def all_text
+    @texts.inject('') { |r, text| r += text + "\n" }
   end
 end
 
