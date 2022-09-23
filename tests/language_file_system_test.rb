@@ -29,9 +29,9 @@ class TestLanguageFileSystem < LanguageFileSystemTest
              "Nein\n"
     init_lfs languages: [:English, :German], default_language: :German
 
-    show_choices ["\\dialogue[yes]", "\\dialogue[no]"]
+    show_choices ['\\dialogue[yes]', '\\dialogue[no]']
 
-    assert_equal ['Ja', 'Nein'], game_message.choices
+    assert_equal %w(Ja Nein), game_message.choices
   end
 
   def test_database_translation

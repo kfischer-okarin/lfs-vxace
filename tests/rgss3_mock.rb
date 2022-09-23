@@ -23,7 +23,7 @@ class Game_Message
   end
 
   def all_text
-    @texts.inject('') { |r, text| r += text + "\n" }
+    @texts.reduce('') { |a, e| a + e + "\n" }
   end
 end
 

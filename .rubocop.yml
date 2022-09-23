@@ -10,5 +10,9 @@ Style/Documentation:
 Style/Encoding:
   EnforcedStyle: when_needed
 
+Style/GlobalVars:
+  AllowedVariables:
+    - $data_system
+
 Style/LineLength:
   Max: 120
