@@ -33,4 +33,16 @@ class TestLanguageFileSystem < LanguageFileSystemTest
 
     assert_equal ['Ja', 'Nein'], game_message.choices
   end
+
+  def test_database_translation
+    add_file 'DatabaseTextGerman.rvtext',
+             "# LFS DATABASE VERSION 13\n" \
+             "<<actors/1/name>>\n" \
+             "Conan, der Barbar\n"
+    init_lfs languages: [:English, :German], default_language: :German
+
+    actor = RPG::Actor.new(1)
+
+    assert_equal 'Conan, der Barbar', actor.name
+  end
 end

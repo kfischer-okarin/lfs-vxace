@@ -1,6 +1,8 @@
 # rubocop:disable Style/Documentation
 module DataManager
-  def self.load_database; end
+  def self.load_database
+    $data_system = RPG::System.new
+  end
 end
 
 class Game_Message
@@ -46,6 +48,10 @@ end
 module RPG
   class BaseItem
     attr_reader :name, :description, :note
+
+    def initialize(id)
+      @id = id
+    end
   end
 
   class Actor < BaseItem
@@ -70,10 +76,25 @@ module RPG
   end
 
   class System
-    attr_reader :game_title, :currency_unit, :elements, :skill_types, :weapon_types, :armor_types
+    attr_reader :game_title, :currency_unit, :elements, :skill_types, :weapon_types, :armor_types, :terms
+
+    def initialize
+      @elements = []
+      @skill_types = []
+      @weapon_types = []
+      @armor_types = []
+      @terms = Terms.new
+    end
 
     class Terms
       attr_reader :basic, :params, :etypes, :commands
+
+      def initialize
+        @basic = []
+        @params = []
+        @etypes = []
+        @commands = []
+      end
     end
   end
 

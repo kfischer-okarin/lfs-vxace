@@ -52,9 +52,12 @@ module FileSystemStub
     stub Object, :open do |path, &block|
       fail "Unexpected path: #{path}" unless files.key? path
 
-      block.call files[path] if block
+      file = files[path]
+      file.rewind
 
-      files[path]
+      block.call file if block
+
+      file
     end
   end
 
