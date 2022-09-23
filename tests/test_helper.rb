@@ -103,6 +103,8 @@ class LanguageFileSystemTest < Minitest::Test
     LanguageFileSystem.send(:remove_const, :ENABLE_ENCRYPTION)
     LanguageFileSystem.const_set(:ENABLE_ENCRYPTION, values.fetch(:enable_encryption, @default_enable_encryption))
 
+    add_default_game_ini unless FileTest.exist? 'Game.ini'
+
     DataManager.load_database
   end
 
@@ -110,5 +112,16 @@ class LanguageFileSystemTest < Minitest::Test
     @game_message ||= Game_Message.new
     @game_message.clear
     @game_message.add text
+  end
+
+  private
+
+  def add_default_game_ini
+    add_file 'Game.ini',
+             "[Game]\n" \
+             "RTP=RPGVXAce\n" \
+             "Library=System\\RGSS301.dll\n" \
+             "Scripts=Data\\Scripts.rvdata2\n" \
+             "Title=Fantasy Game\n"
   end
 end

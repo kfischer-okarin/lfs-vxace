@@ -6,13 +6,6 @@ require_relative '../src/language_file_system'
 
 class TestLanguageFileSystem < LanguageFileSystemTest
   def setup
-    add_file 'Game.ini',
-             "[Game]\n" \
-             "RTP=RPGVXAce\n" \
-             "Library=System\\RGSS301.dll\n" \
-             "Scripts=Data\\Scripts.rvdata2\n" \
-             "Title=Fantasy Game\n"
-
     add_file 'DialoguesEnglish.rvtext',
              "# LFS DIALOGUES VERSION 13\n" \
              "<<soldier_greeting>>\n" \
