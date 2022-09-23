@@ -1,3 +1,6 @@
+Style/Blocks:
+  Enabled: false
+
 Style/ClassAndModuleCamelCase:
   Exclude:
     - src/language_file_system.rb

@@ -102,4 +102,20 @@ module RPG
     attr_reader :display_name, :note
   end
 end
+
+module Kernel
+  def save_data(data, filename)
+    open(filename, 'w') { |f|
+      Marshal.dump(data, f)
+    }
+  end
+
+  def load_data(filename)
+    result = nil
+    open(filename, 'r') { |f|
+      result = Marshal.load(f)
+    }
+    result
+  end
+end
 # rubocop:enable Style/Documentation

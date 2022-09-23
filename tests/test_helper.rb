@@ -49,7 +49,8 @@ module FileSystemStub
   def stub_open
     files = @files
 
-    stub Object, :open do |path, &block|
+    stub Object, :open do |path, mode = nil, &block|
+      files[path] ||= StringIO.new if mode == 'w'
       fail "Unexpected path: #{path}" unless files.key? path
 
       file = files[path]
@@ -121,6 +122,19 @@ class LanguageFileSystemTest < Minitest::Test
     @game_message ||= Game_Message.new
     @game_interpreter = Game_Interpreter.new(@game_message)
     @game_interpreter.setup_choices [choices]
+  end
+
+  def a_valid_database_text_file
+    "# LFS DATABASE VERSION 13\n" \
+    "<<actors/1/name>>\n" \
+    "Conan, the Barbarian #{rand}\n" # to prevent accidental matches
+  end
+
+  def a_valid_dialogues_file
+    "# LFS DIALOGUES VERSION 13\n" \
+    "<<soldier_greeting>>\n" \
+    "\\C[6]Soldier:\\C[0]\n" \
+    "Greetings! Don't make any trouble! #{rand}\n" # to prevent accidental matches
   end
 
   private
