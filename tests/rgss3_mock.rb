@@ -5,6 +5,7 @@ end
 
 class Game_Message
   attr_reader :texts
+  attr_accessor :choices
 
   def initialize
     clear
@@ -16,6 +17,7 @@ class Game_Message
 
   def clear
     @texts = []
+    @choices = []
   end
 
   def all_text
@@ -24,7 +26,13 @@ class Game_Message
 end
 
 class Game_Interpreter
-  def setup_choices(_params); end
+  def initialize(game_message)
+    @game_message = game_message
+  end
+
+  def setup_choices(params)
+    @game_message.choices = params[0]
+  end
 end
 
 module Cache

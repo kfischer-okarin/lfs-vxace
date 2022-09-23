@@ -19,4 +19,18 @@ class TestLanguageFileSystem < LanguageFileSystemTest
                               "Greetings! Don't make any trouble!\n"
     assert_equal expected_displayed_text, game_message.all_text
   end
+
+  def test_show_choices
+    add_file 'DialoguesGerman.rvtext',
+             "# LFS DIALOGUES VERSION 13\n" \
+             "<<yes>>\n" \
+             "Ja\n" \
+             "<<no>>\n" \
+             "Nein\n"
+    init_lfs languages: [:English, :German], default_language: :German
+
+    show_choices ["\\dialogue[yes]", "\\dialogue[no]"]
+
+    assert_equal ['Ja', 'Nein'], game_message.choices
+  end
 end

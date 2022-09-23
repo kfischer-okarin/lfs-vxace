@@ -114,6 +114,12 @@ class LanguageFileSystemTest < Minitest::Test
     @game_message.add text
   end
 
+  def show_choices(choices)
+    @game_message ||= Game_Message.new
+    @game_interpreter = Game_Interpreter.new(@game_message)
+    @game_interpreter.setup_choices [choices]
+  end
+
   private
 
   def add_default_game_ini
