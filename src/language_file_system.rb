@@ -802,11 +802,11 @@ module LanguageFileSystem
     end
 
     def encrypted_dialogue_file(language = nil)
-      "Data/#{DIALOGUE_FILE_PREFIX}#{language}.rvdata2"
+      "#{DIALOGUE_FILE_PREFIX}#{language}.rvdata2"
     end
 
     def encrypted_database_text_file(language = nil)
-      "Data/#{DATABASE_FILE_PREFIX}#{language}.rvdata2"
+      "#{DATABASE_FILE_PREFIX}#{language}.rvdata2"
     end
   end
   #--------------------------------------------------------------------------
