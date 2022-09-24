@@ -746,14 +746,12 @@ module LanguageFileSystem
     def initialize
       load_language
 
-      if FileTest.exist?(dialogue_file)
-        @dialogues = ENABLE_ENCRYPTION ? load_data(dialogue_file) : load_dialogues(language)
-      end
-      if FileTest.exist?(database_file)
-        @database = ENABLE_ENCRYPTION ? load_data(database_file) : load_database(language)
-        redefine_constants
-        redefine_assignments
-      end
+      @dialogues = read_dialogue_data @language
+      @database = read_database_text_data @language
+      return if @database.empty?
+
+      redefine_constants
+      redefine_assignments
     end
 
     #===========================================================================
@@ -762,24 +760,53 @@ module LanguageFileSystem
     # These methods are used internally and should not be used directly unless
     # you know what you do ;)
     #
-    # Methods: dialogue_file, database_file
+    # Methods: read_dialogue_data, database_file
     #===========================================================================
     private
 
-    def dialogue_file(lang = language)
+    def read_dialogue_data(language)
       if ENABLE_ENCRYPTION
-        "Data/#{DIALOGUE_FILE_PREFIX}#{lang}.rvdata2"
+        file = encrypted_dialogue_file(language)
+        return {} unless FileTest.exist? file
+
+        load_data file
       else
-        "#{DIALOGUE_FILE_PREFIX}#{lang}.#{FILE_EXTENSION}"
+        file = dialogue_file(language)
+        return {} unless FileTest.exist? file
+
+        load_dialogue_file file
       end
     end
 
-    def database_file(lang = language)
+    def read_database_text_data(language)
       if ENABLE_ENCRYPTION
-        "Data/#{DATABASE_FILE_PREFIX}#{lang}.rvdata2"
+        file = encrypted_database_text_file(language)
+        return {} unless FileTest.exist? file
+
+        load_data file
       else
-        "#{DATABASE_FILE_PREFIX}#{lang}.#{FILE_EXTENSION}"
+        file = database_text_file(language)
+        return {} unless FileTest.exist? file
+
+        versioncheck_database_file file
+        load_database_file file
       end
+    end
+
+    def dialogue_file(language = nil)
+      "#{DIALOGUE_FILE_PREFIX}#{language}.#{FILE_EXTENSION}"
+    end
+
+    def database_text_file(language = nil)
+      "#{DATABASE_FILE_PREFIX}#{language}.#{FILE_EXTENSION}"
+    end
+
+    def encrypted_dialogue_file(language = nil)
+      "Data/#{DIALOGUE_FILE_PREFIX}#{language}.rvdata2"
+    end
+
+    def encrypted_database_text_file(language = nil)
+      "Data/#{DATABASE_FILE_PREFIX}#{language}.rvdata2"
     end
   end
   #--------------------------------------------------------------------------
@@ -820,12 +847,12 @@ module LanguageFileSystem
   def self.encrypt
     if DEFAULT_LANGUAGE
       LANGUAGES.each { |l|
-        save_data(load_dialogues(l), "Data/#{DIALOGUE_FILE_PREFIX}#{l}.rvdata2")
-        save_data(load_database(l), "Data/#{DATABASE_FILE_PREFIX}#{l}.rvdata2")
+        save_data(load_dialogue_file(dialogue_file(l)), encrypted_dialogue_file(l))
+        save_data(load_database_file(database_text_file(l)), encrypted_database_text_file(l))
       }
     else
-      save_data(load_dialogues, "Data/#{DIALOGUE_FILE_PREFIX}.rvdata2")
-      save_data(load_database, "Data/#{DATABASE_FILE_PREFIX}.rvdata2")
+      save_data(load_dialogue_file(dialogue_file),  encrypted_dialogue_file)
+      save_data(load_database_file(database_text_file), encrypted_database_text_file)
     end
   end
 
