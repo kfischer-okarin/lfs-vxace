@@ -1,8 +1,8 @@
 #==============================================================================
 #
 # Language File System - Core Script
-# Version 1.4.2
-# Last Update: February 4th, 2019
+# Version 1.4.3
+# Last Update: September 30th, 2022
 # Author: DerTraveler (dertraveler [at] gmail.com)
 #
 #==============================================================================
@@ -479,20 +479,19 @@ $imported[:LanguageFileSystem_Core] = true
 # If you want to distribute your game, most probably you don't want anyone to
 # spy on your game's texts.
 # In order to prevent this you can encrypt your text files into RPG Maker style
-# rvdata2-files in your Data-directory. If you create an compressed game
-# archive after that, these files will also be included and will be rendered
-# unreadable for your players consequently.
+# rvdata2-files. If you create an compressed game archive after that, these
+# files will also be included and will be rendered unreadable for your players
+# consequently.
 #
 # When you want to distribute your game, just call following script command
 # while the game is running (e.g. with by a temporary created debug event).
 #
 #   LanguageFileSystem::encrypt
 #
-# After that the encrypted files were created in the Data-directory. Now you can
-# undo all the changes made to the game to call the command and move the .rvtext
-# files out of your project directory (I guess you shouldn't delete them ;) -
-# we don't want your hard translation work to be wasted, right?) to some other
-# place.
+# After that the encrypted files are created. Now you can undo all the changes
+# made to the game to call the command and move the .rvtext files out of your
+# project directory (I guess you shouldn't delete them ;) - we don't want your
+# hard translation work to be wasted, right?) to some other place.
 # The last thing you have to do before compressing your game, is setting the
 # ENABLE_ENCRYPTION option to true, so that the game won't search for the
 # .rvtext files anymore and uses the encrypted data files instead. Of course you
@@ -587,6 +586,15 @@ $imported[:LanguageFileSystem_Core] = true
 # 5. Changelog
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #
+#   1.4.3:
+#     - BREAKING CHANGE: Encrypted files are now no longer created in and read
+#       from the "Data" folder, but in the game's root directory. This is
+#       necessary to make it work with compressed games that are created with
+#       the "Create" Encrypted Archive" option.
+#
+#       How to update your game:
+#       The easiest way would be to just delete the old encrypted files in the
+#       "Data" folder and create new ones as described in section 3.3.
 #   1.4.2:
 #     - Bugfix: Fixed a bug that encrypted language data would not be loaded if
 #               the corresponding rvtext does not exist at the same time (which
