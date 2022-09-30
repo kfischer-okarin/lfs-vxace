@@ -1,0 +1,16 @@
+﻿#                (Message Window Borders) |         |
+<<translator>>
+\C[6]Translator:\C[0]
+Hello! Which language do you want to use?
+<<eng>>
+English
+<<deu>>
+German (Deutsch)
+<<slime-attack>>
+The slime jumps looks at you with his non-existent
+eyes.\..\..\. \>and attacks!\<
+<<shopkeeper>>
+\C[6]Shopkeeper:\C[0]
+Hello! I have the best goods.\..\..\.
+At least the only ones on this desolate
+plateau...

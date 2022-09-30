@@ -1,0 +1,16 @@
+﻿#                (Message Window Borders) |         |
+<<translator>>
+\C[6]Übersetzer:\C[0]
+Hallo! Welche Sprache möchtest du nutzen?
+<<eng>>
+Englisch (English)
+<<deu>>
+Deutsch
+<<slime-attack>>
+Der Blob sieht dich mit seinen nicht-existenten
+Augen an.\..\..\. \>und greift an!\<
+<<shopkeeper>>
+\C[6]Ladenbesitzer:\C[0]
+Hallo! Ich habe die besten Waren.\..\..\.
+Zumindest die einzigen auf diesem 
+verlassenen Plateau...

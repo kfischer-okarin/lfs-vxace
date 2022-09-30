@@ -1,0 +1,230 @@
+﻿# Leave the first line empty please!
+<<actors:1:name>>
+Eric
+<<actors:1:nickname>>
+Silver Reaper
+<<actors:1:description>>
+A veteran warrior who fought on many battlefields.
+He becomes uncontrollable in battle when berserk.
+<<classes:1:name>>
+Soldier
+<<skills:1:message1>>
+ attacks!
+<<skills:11:message1>>
+ uses Poison Cloud!
+<<skills:80:name>>
+Strong Attack
+<<skills:80:description>>
+A strong attack against one enemy.
+<<skills:80:message1>>
+ uses Strong Attack!
+<<items:1:name>>
+Potion
+<<items:1:description>>
+Recovers 500 HP.
+<<weapons:1:name>>
+Hand Ax
+<<weapons:1:description>>
+Small ax used for harvesting wood.
+<<armors:1:name>>
+Casual Clothes
+<<armors:1:description>>
+Very lightweight clothes.
+<<enemies:1:name>>
+Slime
+<<states:1:name>>
+Death
+<<states:1:message1>>
+ has fallen!
+<<states:1:message2>>
+ is slain!
+<<states:1:message4>>
+ revives!
+<<states:2:name>>
+Poison
+<<states:2:message1>>
+ is poisoned!
+<<states:2:message2>>
+ is poisoned!
+<<states:2:message4>>
+ is freed of poison!
+<<system:game_title>>
+Return of the Language Files
+<<system:currency_unit>>
+$
+<<types:skill_types:1>>
+Techniques
+<<terms:basic:2>>
+HP
+<<terms:basic:3>>
+HP
+<<terms:params:0>>
+MaxHP
+<<terms:params:1>>
+MaxMP
+<<terms:params:2>>
+ATK
+<<terms:params:3>>
+DEF
+<<terms:params:4>>
+MAT
+<<terms:params:5>>
+MDF
+<<terms:params:6>>
+AGI
+<<terms:params:7>>
+LUK
+<<terms:etypes:0>>
+Weapon
+<<terms:etypes:1>>
+Shield
+<<terms:etypes:2>>
+Helmet
+<<terms:etypes:3>>
+Armour
+<<terms:etypes:4>>
+Accessory
+<<terms:commands:0>>
+Fight
+<<terms:commands:1>>
+Escape
+<<terms:commands:2>>
+Attack
+<<terms:commands:3>>
+Guard
+<<terms:commands:4>>
+Items
+<<terms:commands:5>>
+Skills
+<<terms:commands:6>>
+Equipment
+<<terms:commands:7>>
+Status
+<<terms:commands:8>>
+Formation
+<<terms:commands:9>>
+Save
+<<terms:commands:10>>
+Exit Game
+<<terms:commands:12>>
+Weapons
+<<terms:commands:13>>
+Armours
+<<terms:commands:14>>
+Key Item
+<<terms:commands:15>>
+Change
+<<terms:commands:16>>
+Optimize
+<<terms:commands:17>>
+Clear
+<<terms:commands:18>>
+New Game
+<<terms:commands:19>>
+Continue
+<<terms:commands:20>>
+Shut Down
+<<terms:commands:21>>
+Go To Title
+<<terms:commands:22>>
+Cancel
+<<maps:1:display_name>>
+Desolate plateau
+<<maps:2:display_name>>
+The only shop
+<<Vocab:ShopBuy>>
+Buy
+<<Vocab:ShopSell>>
+Sell
+<<Vocab:ShopCancel>>
+Cancel
+<<Vocab:Possession>>
+Possession
+<<Vocab:ExpTotal>>
+Current Exp
+<<Vocab:ExpNext>>
+To Next %s
+<<Vocab:SaveMessage>>
+Save to which file?
+<<Vocab:LoadMessage>>
+Load which file?
+<<Vocab:File>>
+File
+<<Vocab:PartyName>>
+%s's Party
+<<Vocab:Emerge>>
+%s emerged!
+<<Vocab:Preemptive>>
+%s got the upper hand!
+<<Vocab:Surprise>>
+%s was surprised
+<<Vocab:EscapeStart>>
+%s tries to escape...
+<<Vocab:EscapeFailure>>
+But escape was impossible!
+<<Vocab:Victory>>
+%s was victorious!
+<<Vocab:Defeat>>
+%s was defeated!
+<<Vocab:ObtainExp>>
+%s EXP received!
+<<Vocab:ObtainGold>>
+%s\\G found!
+<<Vocab:ObtainItem>>
+%s found!
+<<Vocab:LevelUp>>
+%s is now %s %s!
+<<Vocab:ObtainSkill>>
+%s learned!
+<<Vocab:UseItem>>
+%s uses %s!
+<<Vocab:CriticalToEnemy>>
+An excellent hit!!
+<<Vocab:CriticalToActor>>
+A painful blow!!
+<<Vocab:ActorDamage>>
+%s took %s damage!
+<<Vocab:ActorRecovery>>
+%s recovered %s %s!
+<<Vocab:ActorGain>>
+%s gained %s %s!
+<<Vocab:ActorLoss>>
+%s lost %s %s!
+<<Vocab:ActorDrain>>
+%s was drained of %s %s!
+<<Vocab:ActorNoDamage>>
+%s took no damage!
+<<Vocab:ActorNoHit>>
+Miss! %s took no damage!
+<<Vocab:EnemyDamage>>
+%s took %s damage!
+<<Vocab:EnemyRecovery>>
+%s recovered %s %s!
+<<Vocab:EnemyGain>>
+%s gained %s %s!
+<<Vocab:EnemyLoss>>
+%s lost %s %s!
+<<Vocab:EnemyDrain>>
+Drained %s %s from %s!
+<<Vocab:EnemyNoDamage>>
+%s took no damage!
+<<Vocab:EnemyNoHit>>
+Miss! %s took no damage!
+<<Vocab:Evasion>>
+%s evaded the attack!
+<<Vocab:MagicEvasion>>
+%s nullified the magic!
+<<Vocab:MagicReflection>>
+%s reflected the magic!
+<<Vocab:CounterAttack>>
+%s counterattacked!
+<<Vocab:Substitute>>
+%s protected %s!
+<<Vocab:BuffAdd>>
+%s's %s went up!
+<<Vocab:DebuffAdd>>
+%s's %s went down!
+<<Vocab:BuffRemove>>
+%s's %s returned to normal!
+<<Vocab:ActionFailure>>
+There was no effect on %s!

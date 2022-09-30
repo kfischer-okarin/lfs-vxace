@@ -1,0 +1,230 @@
+﻿# Leave the first line empty please!
+<<actors:1:name>>
+Kurt
+<<actors:1:nickname>>
+Silberklinge
+<<actors:1:description>>
+Ein erfahrener Krieger, der in vielen Schlachten
+kämpfte. Im Kampfrausch wird er unberechenbar.
+<<classes:1:name>>
+Soldat
+<<skills:1:message1>>
+ greift an!
+<<skills:11:message1>>
+ benutzt Giftwolke!
+<<skills:80:name>>
+Heftiger Angriff
+<<skills:80:description>>
+Eine starke Attacke gegen einen Gegner.
+<<skills:80:message1>>
+ benutzt Heftigen Angriff!
+<<items:1:name>>
+Heiltrank
+<<items:1:description>>
+Heilt 500 KP.
+<<weapons:1:name>>
+Beil
+<<weapons:1:description>>
+Kleine Axt, die zum Holzfällen verwendet wird.
+<<armors:1:name>>
+Alltagskleidung
+<<armors:1:description>>
+Bietet nur wenig Schutz.
+<<enemies:1:name>>
+Blob
+<<states:1:name>>
+Tod
+<<states:1:message1>>
+ bricht zusammen!
+<<states:1:message2>>
+ stirbt!
+<<states:1:message4>>
+ erwacht wieder zum Leben!
+<<states:2:name>>
+Gift
+<<states:2:message1>>
+ wurde vergiftet!
+<<states:2:message2>>
+ wurde vergiftet!
+<<states:2:message4>>
+ ist nicht mehr vergiftet!
+<<system:game_title>>
+Die Rückkehr der Sprachdateien
+<<system:currency_unit>>
+€
+<<types:skill_types:1>>
+Techniken
+<<terms:basic:2>>
+KP
+<<terms:basic:3>>
+KP
+<<terms:params:0>>
+MaxKP
+<<terms:params:1>>
+MaxMP
+<<terms:params:2>>
+ANG
+<<terms:params:3>>
+ABW
+<<terms:params:4>>
+M.ANG
+<<terms:params:5>>
+M.DEF
+<<terms:params:6>>
+AGI
+<<terms:params:7>>
+GLÜ
+<<terms:etypes:0>>
+Waffe
+<<terms:etypes:1>>
+Schild
+<<terms:etypes:2>>
+Helm
+<<terms:etypes:3>>
+Rüstung
+<<terms:etypes:4>>
+Accessoir
+<<terms:commands:0>>
+Kämpfen
+<<terms:commands:1>>
+Fliehen
+<<terms:commands:2>>
+Angriff
+<<terms:commands:3>>
+Abwehr
+<<terms:commands:4>>
+Gegenst.
+<<terms:commands:5>>
+Fähigkeiten
+<<terms:commands:6>>
+Ausrüstung
+<<terms:commands:7>>
+Status
+<<terms:commands:8>>
+Formation
+<<terms:commands:9>>
+Speichern
+<<terms:commands:10>>
+Spiel beenden
+<<terms:commands:12>>
+Waffen
+<<terms:commands:13>>
+Ausrüstung
+<<terms:commands:14>>
+Wichtig
+<<terms:commands:15>>
+Ändern
+<<terms:commands:16>>
+Optimal
+<<terms:commands:17>>
+Ablegen
+<<terms:commands:18>>
+Neues Spiel
+<<terms:commands:19>>
+Weiter
+<<terms:commands:20>>
+Beenden
+<<terms:commands:21>>
+Zum Titel
+<<terms:commands:22>>
+Abbrechen
+<<maps:1:display_name>>
+Verlassenes Plateau
+<<maps:2:display_name>>
+Der einzige Laden
+<<Vocab:ShopBuy>>
+Kaufen
+<<Vocab:ShopSell>>
+Verkaufen
+<<Vocab:ShopCancel>>
+Abbrechen
+<<Vocab:Possession>>
+Im Besitz
+<<Vocab:ExpTotal>>
+Aktuelle ERF
+<<Vocab:ExpNext>>
+Nächstes %s in
+<<Vocab:SaveMessage>>
+Welchen Speicherstand überschreiben?
+<<Vocab:LoadMessage>>
+Welchen Speicherstand laden?
+<<Vocab:File>>
+Speicherstand
+<<Vocab:PartyName>>
+Die Gruppe von %s
+<<Vocab:Emerge>>
+%s greift an!
+<<Vocab:Preemptive>>
+%s greift zuerst an!
+<<Vocab:Surprise>>
+%s wurde überrascht!
+<<Vocab:EscapeStart>>
+%s versucht zu fliehen...
+<<Vocab:EscapeFailure>>
+Aber die Flucht war nicht erfolgreich!
+<<Vocab:Victory>>
+%s hat gewonnen!
+<<Vocab:Defeat>>
+%s wurde besiegt!
+<<Vocab:ObtainExp>>
+%s ERF erhalten!
+<<Vocab:ObtainGold>>
+%s\G gefunden!
+<<Vocab:ObtainItem>>
+%s gefunden!
+<<Vocab:LevelUp>>
+%s erreicht %s %s!
+<<Vocab:ObtainSkill>>
+%s gelernt!
+<<Vocab:UseItem>>
+%s benutzt %s!
+<<Vocab:CriticalToEnemy>>
+Kritischer Treffer!!
+<<Vocab:CriticalToActor>>
+Autsch! Das hat wehgetan!!
+<<Vocab:ActorDamage>>
+%s verliert %s KP!
+<<Vocab:ActorRecovery>>
+%s wird um %s %s geheilt!
+<<Vocab:ActorGain>>
+%s erhält %s %s!
+<<Vocab:ActorLoss>>
+%s verliert %s %s!
+<<Vocab:ActorDrain>>
+%s wurde absorbiert von %s %s!
+<<Vocab:ActorNoDamage>>
+%s nimmt keinen Schaden!
+<<Vocab:ActorNoHit>>
+%s wurde verfehlt!
+<<Vocab:EnemyDamage>>
+%s verliert %s KP!
+<<Vocab:EnemyRecovery>>
+%s wird um %s %s geheilt!
+<<Vocab:EnemyGain>>
+%s erhält %s %s!
+<<Vocab:EnemyLoss>>
+%s verliert %s %s!
+<<Vocab:EnemyDrain>>
+Absorbiert %s %s von %s!
+<<Vocab:EnemyNoDamage>>
+%s nimmt keinen Schaden!
+<<Vocab:EnemyNoHit>>
+%s wurde verfehlt!
+<<Vocab:Evasion>>
+%s weicht aus!
+<<Vocab:MagicEvasion>>
+%s hebt die Magie auf!
+<<Vocab:MagicReflection>>
+%s reflektiert die Magie!
+<<Vocab:CounterAttack>>
+%s kontert!
+<<Vocab:Substitute>>
+%s beschützt %s!
+<<Vocab:BuffAdd>>
+%ss %s steigt!
+<<Vocab:DebuffAdd>>
+%ss %s sinkt!
+<<Vocab:BuffRemove>>
+%ss %s ist wieder normal!
+<<Vocab:ActionFailure>>
+Es hatte keinen Effekt auf %s!
